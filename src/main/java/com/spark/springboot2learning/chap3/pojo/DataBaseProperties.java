@@ -1,6 +1,7 @@
 package com.spark.springboot2learning.chap3.pojo;
 
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
 
 /**
@@ -8,6 +9,7 @@ import org.springframework.stereotype.Component;
  * @date 2019/8/1 17:39
  */
 @Component
+@ConfigurationProperties("database")
 public class DataBaseProperties {
 
     private String driverName = null;
