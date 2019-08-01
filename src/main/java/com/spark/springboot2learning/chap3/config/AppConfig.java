@@ -1,9 +1,8 @@
 package com.spark.springboot2learning.chap3.config;
 
+import com.spark.springboot2learning.chap3.condition.DatabaseConditional;
 import org.apache.commons.dbcp2.BasicDataSourceFactory;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.*;
 import org.springframework.stereotype.Service;
 
 import javax.sql.DataSource;
@@ -16,9 +15,14 @@ import java.util.Properties;
 @Configuration
 @ComponentScan(basePackages = "com.spark.springboot2learning.chap3.*",
                 excludeFilters = {@ComponentScan.Filter(classes = {Service.class})})
+@ImportResource(value = {"classpath:spring-other.xml"})
 public class AppConfig {
-
-    @Bean(name = "dataSource")
+    /**
+     * 条件加载
+     * @return
+     */
+    @Bean(name = "dataSource", destroyMethod = "close")
+    @Conditional(DatabaseConditional.class)
     public DataSource getDataSource() {
         Properties props = new Properties();
         props.setProperty("driver", "com.mysql.jdbc.Driver");
