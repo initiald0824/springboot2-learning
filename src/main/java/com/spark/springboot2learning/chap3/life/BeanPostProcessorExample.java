@@ -21,6 +21,6 @@ public class BeanPostProcessorExample implements BeanPostProcessor {
     public Object postProcessAfterInitialization(Object bean, String beanName) throws BeansException {
         System.out.println("BeanPostProcessor调用" + "postProcessAfterInitialization方法, 参数【" +
                 bean.getClass().getSimpleName() + "】【" + beanName + "】");
-        return null;
+        return bean;
     }
 }
