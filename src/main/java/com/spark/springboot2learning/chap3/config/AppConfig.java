@@ -15,7 +15,6 @@ import java.util.Properties;
 @Configuration
 @ComponentScan(basePackages = "com.spark.springboot2learning.chap3.*",
                 excludeFilters = {@ComponentScan.Filter(classes = {Service.class})})
-@ImportResource(value = {"classpath:spring-other.xml"})
 public class AppConfig {
     /**
      * 条件加载
