@@ -1,5 +1,6 @@
 package com.spark.springboot2learning.chap4.aspect;
 
+import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.*;
 
 /**
@@ -32,5 +33,13 @@ public class MyAspect {
     public void afterThrowing() {
         System.out.println("afterThrowing ......");
     }
+
+    @Around("pointCut()")
+    public void around(ProceedingJoinPoint jp) throws Throwable {
+        System.out.println("around before ......");
+        jp.proceed();
+        System.out.println("around after ......");
+    }
+
 }
 
