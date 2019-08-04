@@ -21,7 +21,7 @@ public class AppConfig {
      * @return
      */
     @Bean(name = "dataSource", destroyMethod = "close")
-//    @Conditional(DatabaseConditional.class)
+    @Conditional(DatabaseConditional.class)
     public DataSource getDataSource() {
         Properties props = new Properties();
         props.setProperty("driver", "com.mysql.jdbc.Driver");

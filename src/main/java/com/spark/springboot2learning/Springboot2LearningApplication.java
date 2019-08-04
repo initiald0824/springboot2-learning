@@ -11,7 +11,7 @@ import org.springframework.context.annotation.Bean;
 /**
  * @author initiald0824
  */
-@SpringBootApplication(scanBasePackages= {"com.spark.springboot2learning.chap4.aspect"})
+@SpringBootApplication(scanBasePackages= {"com.spark.springboot2learning.chap5"})
 public class Springboot2LearningApplication {
 
     /**

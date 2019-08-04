@@ -1,6 +1,6 @@
 package com.spark.springboot2learning.chap4.aspect.validator.impl;
 
-import com.spark.springboot2learning.chap3.pojo.User;
+import com.spark.springboot2learning.chap3.pojo.UserChap4;
 import com.spark.springboot2learning.chap4.aspect.validator.UserValidator;
 
 /**
@@ -9,8 +9,8 @@ import com.spark.springboot2learning.chap4.aspect.validator.UserValidator;
  */
 public class UserValidatorImpl implements UserValidator {
     @Override
-    public boolean validate(User user) {
+    public boolean validate(UserChap4 userChap4) {
         System.out.println("引入新接口：" + UserValidator.class.getSimpleName());
-        return user != null;
+        return userChap4 != null;
     }
 }

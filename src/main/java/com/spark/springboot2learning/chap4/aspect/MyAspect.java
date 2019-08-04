@@ -1,11 +1,10 @@
 package com.spark.springboot2learning.chap4.aspect;
 
-import com.spark.springboot2learning.chap3.pojo.User;
+import com.spark.springboot2learning.chap3.pojo.UserChap4;
 import com.spark.springboot2learning.chap4.aspect.validator.UserValidator;
 import com.spark.springboot2learning.chap4.aspect.validator.impl.UserValidatorImpl;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.*;
-import org.springframework.core.annotation.Order;
 
 /**
  * @author initiald0824
@@ -27,9 +26,9 @@ public class MyAspect {
         System.out.println("before ......");
     }
 
-    @Before("pointCut() && args(user)")
-    public void beforeParam(User user) {
-        System.out.println("before params.... " + user.getUserName());
+    @Before("pointCut() && args(userChap4)")
+    public void beforeParam(UserChap4 userChap4) {
+        System.out.println("before params.... " + userChap4.getUserName());
     }
 
     @After("pointCut()")

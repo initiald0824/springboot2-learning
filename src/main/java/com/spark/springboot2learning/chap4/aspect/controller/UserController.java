@@ -1,6 +1,6 @@
 package com.spark.springboot2learning.chap4.aspect.controller;
 
-import com.spark.springboot2learning.chap3.pojo.User;
+import com.spark.springboot2learning.chap3.pojo.UserChap4;
 import com.spark.springboot2learning.chap4.aspect.service.UserService;
 import com.spark.springboot2learning.chap4.aspect.validator.UserValidator;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,26 +19,26 @@ public class UserController {
     private UserService userService;
 
     @RequestMapping("/print")
-    public User printUser(Long id, String userName, String note) {
-        User user = new User();
-        user.setId(id);
-        user.setUserName(userName);
-        user.setNote(note);
-        userService.printUser(user);
-        return user;
+    public UserChap4 printUser(Long id, String userName, String note) {
+        UserChap4 userChap4 = new UserChap4();
+        userChap4.setId(id);
+        userChap4.setUserName(userName);
+        userChap4.setNote(note);
+        userService.printUser(userChap4);
+        return userChap4;
     }
 
     @RequestMapping("/vp")
-     public User validateAndPrint(Long id, String userName, String note) {
-        User user = new User();
-        user.setId(id);
-        user.setUserName(userName);
-        user.setNote(note);
+     public UserChap4 validateAndPrint(Long id, String userName, String note) {
+        UserChap4 userChap4 = new UserChap4();
+        userChap4.setId(id);
+        userChap4.setUserName(userName);
+        userChap4.setNote(note);
         UserValidator userValidator = (UserValidator)userService;
-        if (userValidator.validate(user)) {
-            userService.printUser(user);
+        if (userValidator.validate(userChap4)) {
+            userService.printUser(userChap4);
         }
-        return user;
+        return userChap4;
     }
 
     @RequestMapping("/manyAspects")

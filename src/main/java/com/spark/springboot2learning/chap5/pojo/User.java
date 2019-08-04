@@ -1,23 +1,16 @@
-package com.spark.springboot2learning.chap3.pojo;
+package com.spark.springboot2learning.chap5.pojo;
 
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.stereotype.Component;
+import com.spark.springboot2learning.chap5.enumeration.SexEnum;
 
 /**
  * @author initiald0824
- * @date 2019/8/1 11:26
+ * @date 2019/8/4 23:18
  */
-
-@Component("user")
 public class User {
-    @Value("1")
-    private Long id;
-
-    @Value("user_name_1")
-    private String userName;
-
-    @Value("note_1")
-    private String note;
+    private Long id = null;
+    private String userName = null;
+    private SexEnum sex = null;
+    private String note = null;
 
     public Long getId() {
         return id;
@@ -33,6 +26,14 @@ public class User {
 
     public void setUserName(String userName) {
         this.userName = userName;
+    }
+
+    public SexEnum getSex() {
+        return sex;
+    }
+
+    public void setSex(SexEnum sex) {
+        this.sex = sex;
     }
 
     public String getNote() {

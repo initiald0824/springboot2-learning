@@ -1,12 +1,8 @@
 package com.spark.springboot2learning.chap3.config;
 
 
-import com.spark.springboot2learning.chap3.pojo.BusinessPerson;
-import com.spark.springboot2learning.chap3.pojo.User;
-import com.spark.springboot2learning.chap3.pojo.definition.Person;
 import com.spark.springboot2learning.chap3.scope.pojo.ScopeBean;
 import org.apache.log4j.Logger;
-import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 
