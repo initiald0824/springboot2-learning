@@ -1,22 +1,15 @@
-package com.spark.springboot2learning.chap3.pojo;
+package com.spark.springboot2learning.chap6.pojo;
 
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.stereotype.Component;
+import org.apache.ibatis.type.Alias;
 
 /**
  * @author initiald0824
- * @date 2019/8/1 11:26
+ * @date 2019/8/5 23:32
  */
-
-@Component("user")
-public class UserChap4 {
-    @Value("1")
+@Alias("user")
+public class User {
     private Long id;
-
-    @Value("user_name_1")
     private String userName;
-
-    @Value("note_1")
     private String note;
 
     public Long getId() {
