@@ -4,6 +4,7 @@ import com.spark.springboot2learning.chap4.aspect.MyAspect;
 import com.spark.springboot2learning.chap4.aspect.MyAspect1;
 import com.spark.springboot2learning.chap4.aspect.MyAspect2;
 import com.spark.springboot2learning.chap4.aspect.MyAspect3;
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
@@ -16,6 +17,10 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 @SpringBootApplication(scanBasePackages= {"com.spark.springboot2learning.chap5"})
 @EnableJpaRepositories(basePackages = "com.spark.springboot2learning.chap5.dao")
 @EntityScan(basePackages = "com.spark.springboot2learning.chap5.pojo")
+@MapperScan(
+        // 指定扫描包
+        basePackages = "com.spark.springboot2learning.chap5.*"
+)
 public class Springboot2LearningApplication {
 
     /**
