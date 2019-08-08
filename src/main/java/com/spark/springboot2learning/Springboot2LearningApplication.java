@@ -16,10 +16,10 @@ import javax.annotation.PostConstruct;
  */
 @MapperScan(
         // 指定扫描包
-        basePackages = "com.spark.springboot2learning.chap6",
+        basePackages = "com.spark.springboot2learning.chap7",
         annotationClass = Repository.class
 )
-@SpringBootApplication(scanBasePackages= {"com.spark.springboot2learning.chap6"})
+@SpringBootApplication(scanBasePackages= {"com.spark.springboot2learning.chap7"})
 public class Springboot2LearningApplication {
 
     @Autowired
