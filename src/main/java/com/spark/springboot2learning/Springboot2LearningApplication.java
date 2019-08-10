@@ -5,7 +5,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
+import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.context.annotation.Bean;
+import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.data.redis.serializer.RedisSerializer;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.PlatformTransactionManager;
 
@@ -16,18 +19,28 @@ import javax.annotation.PostConstruct;
  */
 @MapperScan(
         // 指定扫描包
-        basePackages = "com.spark.springboot2learning.chap7",
+        basePackages = "com.spark.springboot2learning.chap8",
         annotationClass = Repository.class
 )
-@SpringBootApplication(scanBasePackages= {"com.spark.springboot2learning.chap7"})
+@EnableCaching
+@SpringBootApplication(scanBasePackages= {"com.spark.springboot2learning.chap8"})
 public class Springboot2LearningApplication {
 
+
     @Autowired
-    PlatformTransactionManager transactionManager = null;
+    private RedisTemplate redisTemplate = null;
 
     @PostConstruct
-    public void viewTransactionManager() {
-        System.out.println(transactionManager.getClass().getName());
+    public void init() {
+        initRedisTemplate();
+    }
+
+    private void initRedisTemplate() {
+        RedisSerializer stringSerializer = redisTemplate.getStringSerializer();
+        redisTemplate.setKeySerializer(stringSerializer);
+        redisTemplate.setValueSerializer(stringSerializer);
+        redisTemplate.setHashKeySerializer(stringSerializer);
+        redisTemplate.setHashValueSerializer(stringSerializer);
     }
 
     /**
