@@ -19,11 +19,11 @@ import javax.annotation.PostConstruct;
  */
 @MapperScan(
         // 指定扫描包
-        basePackages = "com.spark.springboot2learning.chap9",
+        basePackages = "com.spark.springboot2learning.chap11",
         annotationClass = Repository.class
 )
 @EnableCaching
-@SpringBootApplication(scanBasePackages= {"com.spark.springboot2learning.chap9"})
+@SpringBootApplication(scanBasePackages= {"com.spark.springboot2learning.chap11"})
 public class Springboot2LearningApplication {
 
 
