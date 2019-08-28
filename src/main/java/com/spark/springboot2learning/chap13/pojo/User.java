@@ -1,18 +1,24 @@
-package com.spark.springboot2learning.chap11.pojo;
+package com.spark.springboot2learning.chap13.pojo;
 
-import com.spark.springboot2learning.chap11.enumeration.SexEnum;
-import org.apache.ibatis.type.Alias;
+import java.io.Serializable;
 
 /**
  * @author initiald0824
- * @date 2019/8/26 23:56
+ * @date 2019/8/28 19:33
  */
-@Alias("user")
-public class User {
+public class User implements Serializable {
+
+    private static final long serialVersionUID = 8081849731640304905L;
+
     private Long id;
     private String userName;
-    private SexEnum sex = null;
     private String note;
+
+    public User(Long id, String userName, String note) {
+        this.id = id;
+        this.userName = userName;
+        this.note = note;
+    }
 
     public Long getId() {
         return id;
@@ -28,14 +34,6 @@ public class User {
 
     public void setUserName(String userName) {
         this.userName = userName;
-    }
-
-    public SexEnum getSex() {
-        return sex;
-    }
-
-    public void setSex(SexEnum sex) {
-        this.sex = sex;
     }
 
     public String getNote() {
