@@ -1,24 +1,16 @@
-package com.spark.springboot2learning.chap13.pojo;
-
-import java.io.Serializable;
+package com.spark.springboot2learning.chap14.vo;
 
 /**
  * @author initiald0824
- * @date 2019/8/28 19:33
+ * @date 8/29/2019 4:38 PM
  */
-public class User implements Serializable {
-
-    private static final long serialVersionUID = 8081849731640304905L;
-
+public class UserVo {
     private Long id;
     private String userName;
+    private int sexCode;
+    private String sexName;
     private String note;
 
-    public User(Long id, String userName, String note) {
-        this.id = id;
-        this.userName = userName;
-        this.note = note;
-    }
 
     public Long getId() {
         return id;
@@ -34,6 +26,22 @@ public class User implements Serializable {
 
     public void setUserName(String userName) {
         this.userName = userName;
+    }
+
+    public int getSexCode() {
+        return sexCode;
+    }
+
+    public void setSexCode(int sexCode) {
+        this.sexCode = sexCode;
+    }
+
+    public String getSexName() {
+        return sexName;
+    }
+
+    public void setSexName(String sexName) {
+        this.sexName = sexName;
     }
 
     public String getNote() {
